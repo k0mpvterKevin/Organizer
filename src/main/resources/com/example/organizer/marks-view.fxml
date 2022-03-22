@@ -12,5 +12,6 @@
     </padding>
 
     <Label fx:id="welcomeText"/>
-    <Button text="markScene" onAction="#switchToScene3"/>
+    <Button text="backToStartScene" onAction="#switchToScene1"/>
 </VBox>
+
