@@ -12,5 +12,5 @@
     </padding>
 
     <Label fx:id="welcomeText"/>
-    <Button text="markScene" onAction="#switchToScene3"/>
+    <Button text="markScene" onAction="#switchToCalendar"/>
 </VBox>
