@@ -23,7 +23,7 @@ public class SceneController {
         stage.show();
     }
     public void switchToScene2(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("organizer-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("calendar-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root, 600, 300);
         stage.setScene(scene);
