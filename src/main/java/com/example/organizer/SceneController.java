@@ -29,4 +29,11 @@ public class SceneController {
         stage.setScene(scene);
         stage.show();
     }
+    public void switchToScene3(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("marks-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 600, 300);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
