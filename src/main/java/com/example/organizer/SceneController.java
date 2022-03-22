@@ -13,7 +13,6 @@ import java.util.Objects;
 public class SceneController {
     private Stage stage;
     private Scene scene;
-    private Parent root;
 
     public void switchToMarks(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("mark-view.fxml"));
