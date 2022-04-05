@@ -104,5 +104,4 @@ public class SceneController {
     public void switchToMarks(ActionEvent actionEvent) {
     }
 
-    private void switchScene(ActionEvent event, )
 }
