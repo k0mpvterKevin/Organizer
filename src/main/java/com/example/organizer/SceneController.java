@@ -91,4 +91,10 @@ public class SceneController {
 
     public void ContactClicked(MouseEvent mouseEvent) {
     }
+
+    public void switchToCalendar(ActionEvent actionEvent) {
+    }
+
+    public void switchToMarks(ActionEvent actionEvent) {
+    }
 }
