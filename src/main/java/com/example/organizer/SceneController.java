@@ -17,28 +17,6 @@ public class SceneController {
     private Scene scene;
     private Parent root;
 
-    public void switchToScene1(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 600, 300);
-        stage.setScene(scene);
-        stage.show();
-    }
-    public void switchToScene2(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("CalendarViewMonday.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 731, 513);
-        stage.setScene(scene);
-        stage.show();
-    }
-    public void switchToScene3(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("marks-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 600, 300);
-        stage.setScene(scene);
-        stage.show();
-    }
-
     public void homePaneClicked(MouseEvent mouseEvent) {
     }
 
@@ -49,6 +27,7 @@ public class SceneController {
     }
 
     public void MarksButtonClicked(ActionEvent actionEvent) {
+        ;
     }
 
     public void calendarPaneClicked(MouseEvent mouseEvent) {
@@ -94,14 +73,20 @@ public class SceneController {
     }
 
     public void switchToCalendar(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("CalendarViewMonday.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 731, 513);
-        stage.setScene(scene);
-        stage.show();
+        switchScene(event, "CalendarViewMonday");
+
     }
 
-    public void switchToMarks(ActionEvent actionEvent) {
+    public void switchToMarks(ActionEvent event) throws IOException {
+        switchScene(event, "marks-view");
+    }
+
+    private void switchScene(ActionEvent event, String fileName) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource(fileName + ".fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root, Const.SCREENWIDTH, Const.SCREENHEIGHT);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }
