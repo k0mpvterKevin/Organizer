@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import org.controlsfx.control.action.Action;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -24,7 +25,7 @@ public class SceneController {
         stage.show();
     }
     public void switchToScene2(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("CalendarViewMonday.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root, 731, 513);
         stage.setScene(scene);
@@ -92,9 +93,16 @@ public class SceneController {
     public void ContactClicked(MouseEvent mouseEvent) {
     }
 
-    public void switchToCalendar(ActionEvent actionEvent) {
+    public void switchToCalendar(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("CalendarViewMonday.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 731, 513);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void switchToMarks(ActionEvent actionEvent) {
     }
+
+    private void switchScene(ActionEvent event, )
 }
