@@ -1,21 +1,33 @@
 package com.example.organizer;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 public class DatabaseInc {
 
-    String servername = "localhost";
 
-    String username = "root";
-    String password = "";
-/*
-try {
-        PDO conn = new PDO("mysql:host=$servername;dbname=lb1", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully";
-    } catch(PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
+
+    public void connectWithDatabase() {
+        Connection connection = null;
+        try {
+            String url = "jdbc:sqlite:path-to-db/chinook/chinook.db";
+            connection = DriverManager.getConnection(url);
+
+            System.out.println("Got it!");
+
+        } catch (SQLException e) {
+            throw new Error("Problem", e);
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
     }
-
- */
-
 }
