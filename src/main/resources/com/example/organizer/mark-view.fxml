@@ -13,9 +13,9 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane maxHeight="-1.0" maxWidth="-1.0" onMouseClicked="#homePaneClicked" prefHeight="513.0" prefWidth="731.0" style="-fx-background-color: #028090;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" onMouseClicked="#homePaneClicked" prefHeight="513.0" prefWidth="731.0" style="-fx-background-color: #028090;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.organizer.SceneController">
     <children>
-        <Button fx:id="calendarButton" layoutX="14.0" layoutY="116.0" mnemonicParsing="false" onAction="#calendarButtonClicked" onMouseMoved="#calendarButtonHover" prefHeight="37.0" prefWidth="86.0" style="-fx-background-radius: 20;" text="Calendar">
+        <Button fx:id="calendarButton" layoutX="14.0" layoutY="116.0" mnemonicParsing="false" onAction="#calendarButtonClicked" prefHeight="37.0" prefWidth="86.0" style="-fx-background-radius: 20;" text="Calendar">
             <effect>
                 <DropShadow height="3.0" offsetY="5.0" radius="0.25" width="0.0">
                     <color>
@@ -24,7 +24,7 @@
                 </DropShadow>
             </effect>
         </Button>
-        <Button fx:id="teacherButton" layoutX="14.0" layoutY="158.0" mnemonicParsing="false" onAction="#teacherButtonClicked" onMouseMoved="#teacherButtonHover" prefHeight="37.0" prefWidth="86.0" style="-fx-background-radius: 20;" text="Teacher">
+        <Button fx:id="teacherButton" layoutX="14.0" layoutY="158.0" mnemonicParsing="false" onAction="#teacherButtonClicked" prefHeight="37.0" prefWidth="86.0" style="-fx-background-radius: 20;" text="Teacher">
             <effect>
                 <DropShadow height="3.0" offsetY="5.0" radius="0.25" width="0.0">
                     <color>
@@ -33,7 +33,7 @@
                 </DropShadow>
             </effect>
         </Button>
-        <Button fx:id="marksButton" layoutX="14.0" layoutY="199.0" mnemonicParsing="false" onAction="#MarksButtonClicked" onMouseMoved="#marksButtonHover" prefHeight="37.0" prefWidth="86.0" style="-fx-background-radius: 20; -fx-background-color: #69ABAE #69ABAE;" text="Marks">
+        <Button fx:id="marksButton" layoutX="14.0" layoutY="199.0" mnemonicParsing="false" onAction="#MarksButtonClicked" prefHeight="37.0" prefWidth="86.0" style="-fx-background-radius: 20; -fx-background-color: #69ABAE #69ABAE;" text="Marks">
             <effect>
                 <DropShadow height="3.0" offsetY="5.0" radius="0.25" width="0.0">
                     <color>

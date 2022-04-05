@@ -26,8 +26,8 @@ public class SceneController {
     public void teacherButtonClicked(ActionEvent actionEvent) {
     }
 
-    public void MarksButtonClicked(ActionEvent actionEvent) {
-        ;
+    public void MarksButtonClicked(ActionEvent actionEvent) throws IOException {
+        switchToMarks(actionEvent);
     }
 
     public void calendarPaneClicked(MouseEvent mouseEvent) {
@@ -78,7 +78,7 @@ public class SceneController {
     }
 
     public void switchToMarks(ActionEvent event) throws IOException {
-        switchScene(event, "marks-view");
+        switchScene(event, "mark-view");
     }
 
     private void switchScene(ActionEvent event, String fileName) throws IOException {
