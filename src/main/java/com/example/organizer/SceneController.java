@@ -5,6 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import org.controlsfx.control.action.Action;
@@ -16,14 +19,16 @@ public class SceneController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private String input;
 
     public void homePaneClicked(MouseEvent mouseEvent) {
     }
 
-    public void calendarButtonClicked(ActionEvent actionEvent) {
+    public void calendarButtonClicked(ActionEvent actionEvent) throws IOException{
+        switchToCalendar(actionEvent);
     }
 
-    public void teacherButtonClicked(ActionEvent actionEvent) {
+    public void teacherButtonClicked(ActionEvent actionEvent)  {
     }
 
     public void MarksButtonClicked(ActionEvent actionEvent) throws IOException {
@@ -79,6 +84,13 @@ public class SceneController {
 
     public void switchToMarks(ActionEvent event) throws IOException {
         switchScene(event, "mark-view");
+    }
+
+    public void createNewTbzSubject(MouseEvent mouseEvent){
+        TextArea textArea = new TextArea();
+        textArea.setText("hi");
+
+
     }
 
     private void switchScene(ActionEvent event, String fileName) throws IOException {
