@@ -32,7 +32,7 @@
                 </DropShadow>
             </effect>
         </Button>
-        <Button fx:id="marksButton" layoutX="14.0" layoutY="199.0" mnemonicParsing="false" onAction="#MarksButtonClicked" prefHeight="37.0" prefWidth="86.0" style="-fx-background-radius: 20;" text="Marks">
+        <Button fx:id="marksButton" layoutX="14.0" layoutY="199.0" mnemonicParsing="false" onAction="#marksButtonClicked" prefHeight="37.0" prefWidth="86.0" style="-fx-background-radius: 20;" text="Marks">
             <effect>
                 <DropShadow height="3.0" offsetY="5.0" radius="0.25" width="0.0">
                     <color>

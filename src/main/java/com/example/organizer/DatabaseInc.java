@@ -3,8 +3,6 @@ package com.example.organizer;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 public class DatabaseInc {
 
@@ -18,15 +16,15 @@ public class DatabaseInc {
 
             System.out.println("Got it!");
 
-        } catch (SQLException e) {
-            throw new Error("Problem", e);
+        } catch (SQLException exception) {
+            throw new Error("Problem", exception);
         } finally {
             try {
                 if (connection != null) {
                     connection.close();
                 }
-            } catch (SQLException ex) {
-                System.out.println(ex.getMessage());
+            } catch (SQLException exception) {
+                System.out.println(exception.getMessage());
             }
         }
     }

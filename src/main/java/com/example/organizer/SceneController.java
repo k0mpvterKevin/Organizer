@@ -28,10 +28,11 @@ public class SceneController {
         switchToCalendar(actionEvent);
     }
 
-    public void teacherButtonClicked(ActionEvent actionEvent)  {
+    public void teacherButtonClicked(ActionEvent actionEvent) throws IOException {
+        switchToTeacher(actionEvent);
     }
 
-    public void MarksButtonClicked(ActionEvent actionEvent) throws IOException {
+    public void marksButtonClicked(ActionEvent actionEvent) throws IOException {
         switchToMarks(actionEvent);
     }
 
@@ -84,6 +85,10 @@ public class SceneController {
 
     public void switchToMarks(ActionEvent event) throws IOException {
         switchScene(event, "mark-view");
+    }
+
+    public void switchToTeacher(ActionEvent event) throws IOException {
+        switchScene(event, "teacher-view");
     }
 
     public void createNewTbzSubject(MouseEvent mouseEvent){
