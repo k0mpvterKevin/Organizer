@@ -6,6 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
@@ -42,19 +45,22 @@ public class SceneController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private String input;
     private Circle currentCircle;
 
     public void homePaneClicked(MouseEvent mouseEvent) {
     }
 
-    public void calendarButtonClicked(ActionEvent actionEvent) {
+    public void calendarButtonClicked(ActionEvent actionEvent) throws IOException{
+        switchToCalendar(actionEvent);
     }
 
-    public void teacherButtonClicked(ActionEvent actionEvent) {
+    public void teacherButtonClicked(ActionEvent actionEvent) throws IOException {
+        switchToTeacher(actionEvent);
     }
 
-    public void MarksButtonClicked(ActionEvent actionEvent) {
-        ;
+    public void marksButtonClicked(ActionEvent actionEvent) throws IOException {
+        switchToMarks(actionEvent);
     }
 
     public void calendarPaneClicked(MouseEvent mouseEvent) {
@@ -111,7 +117,18 @@ public class SceneController {
     }
 
     public void switchToMarks(ActionEvent event) throws IOException {
-        switchScene(event, "marks-view");
+        switchScene(event, "mark-view");
+    }
+
+    public void switchToTeacher(ActionEvent event) throws IOException {
+        switchScene(event, "teacher-view");
+    }
+
+    public void createNewTbzSubject(MouseEvent mouseEvent){
+        TextArea textArea = new TextArea();
+        textArea.setText("hi");
+
+
     }
 
     public void sundayHover(MouseEvent mouseEvent) {
