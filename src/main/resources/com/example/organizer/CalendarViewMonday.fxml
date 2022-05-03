@@ -45,7 +45,7 @@
             <children>
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#69abae" height="48.0" layoutX="-17.0" layoutY="89.0" rotate="45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: -50;" width="48.0" />
                 <Pane fx:id="dayExtension" layoutX="75.0" layoutY="69.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #aeeaf0;" />
-                <Circle fx:id="sundayCircle" fill="#8ccdd4" layoutX="465.0" layoutY="72.0" onMouseClicked="#sundayClicked" radius="30.0" stroke="BLACK" strokeWidth="0.0">
+                <Circle fx:id="sundayCircle" fill="#8ccdd4" layoutX="465.0" layoutY="72.0" onMouseClicked="#sundayClicked" onMouseEntered="#sundayHover" onMouseExited="#sundayHoverExit" radius="30.0" stroke="BLACK" strokeWidth="0.0">
                     <effect>
                         <DropShadow height="1.0" offsetY="5.0" radius="0.0" width="0.0">
                             <color>
@@ -54,7 +54,7 @@
                         </DropShadow>
                     </effect>
                 </Circle>
-                <Circle fx:id="saturdayCircle" fill="#8ccdd4" layoutX="405.0" layoutY="72.0" onMouseClicked="#saturdayClicked" radius="30.0" stroke="BLACK" strokeWidth="0.0">
+                <Circle fx:id="saturdayCircle" fill="#8ccdd4" layoutX="405.0" layoutY="72.0" onMouseClicked="#saturdayClicked" onMouseEntered="#saturdayHover" onMouseExited="#saturdayHoverExit" radius="30.0" stroke="BLACK" strokeWidth="0.0">
                     <effect>
                         <DropShadow height="1.0" offsetY="5.0" radius="0.0" width="0.0">
                             <color>
@@ -63,7 +63,7 @@
                         </DropShadow>
                     </effect>
                 </Circle>
-                <Circle fx:id="fridayCircle" fill="#8ccdd4" layoutX="345.0" layoutY="72.0" onMouseClicked="#fridayClicked" radius="30.0" stroke="BLACK" strokeWidth="0.0">
+                <Circle fx:id="fridayCircle" fill="#8ccdd4" layoutX="345.0" layoutY="72.0" onMouseClicked="#fridayClicked" onMouseEntered="#fridayHover" onMouseExited="#fridayHoverExit" radius="30.0" stroke="BLACK" strokeWidth="0.0">
                     <effect>
                         <DropShadow height="1.0" offsetY="5.0" radius="0.0" width="0.0">
                             <color>
@@ -72,7 +72,7 @@
                         </DropShadow>
                     </effect>
                 </Circle>
-                <Circle fx:id="thursdayCircle" fill="#8ccdd4" layoutX="285.0" layoutY="72.0" onMouseClicked="#thursdayClicked" radius="30.0" stroke="BLACK" strokeWidth="0.0">
+                <Circle fx:id="thursdayCircle" fill="#8ccdd4" layoutX="285.0" layoutY="72.0" onMouseClicked="#thursdayClicked" onMouseEntered="#thursdayHover" onMouseExited="#thursdayHoverExit" radius="30.0" stroke="BLACK" strokeWidth="0.0">
                     <effect>
                         <DropShadow height="1.0" offsetY="5.0" radius="0.0" width="0.0">
                             <color>
@@ -81,7 +81,7 @@
                         </DropShadow>
                     </effect>
                 </Circle>
-                <Circle fx:id="wednesdayCircle" fill="#8ccdd4" layoutX="225.0" layoutY="72.0" onMouseClicked="#wednesdayClicked" radius="30.0" stroke="BLACK" strokeWidth="0.0">
+                <Circle fx:id="wednesdayCircle" fill="#8ccdd4" layoutX="225.0" layoutY="72.0" onMouseClicked="#wednesdayClicked" onMouseEntered="#wednesdayHover" onMouseExited="#wednesdayHoverExit" radius="30.0" stroke="BLACK" strokeWidth="0.0">
                     <effect>
                         <DropShadow height="1.0" offsetY="5.0" radius="0.0" width="0.0">
                             <color>
@@ -90,7 +90,7 @@
                         </DropShadow>
                     </effect>
                 </Circle>
-                <Circle fx:id="tuesdayCircle" fill="#8ccdd4" layoutX="165.0" layoutY="71.0" onMouseClicked="#tuesdayClicked" radius="30.0" stroke="BLACK" strokeWidth="0.0">
+                <Circle fx:id="tuesdayCircle" fill="#8ccdd4" layoutX="165.0" layoutY="71.0" onMouseClicked="#tuesdayClicked" onMouseEntered="#tuesdayHover" onMouseExited="#tuesdayHoverExit" radius="30.0" stroke="BLACK" strokeWidth="0.0">
                     <effect>
                         <DropShadow height="1.0" offsetY="5.0" radius="0.0" width="0.0">
                             <color>
@@ -99,49 +99,49 @@
                         </DropShadow>
                     </effect>
                 </Circle>
-                <Circle fx:id="mondayCircle" fill="#aeeaf0" layoutX="105.0" layoutY="71.0" onMouseClicked="#mondayClicked" radius="30.0" stroke="BLACK" strokeWidth="0.0" />
-                <Label fx:id="labelSunday" layoutX="453.0" layoutY="50.0" text="Sun">
+                <Circle fx:id="mondayCircle" fill="#aeeaf0" layoutX="105.0" layoutY="71.0" onMouseClicked="#mondayClicked" onMouseEntered="#mondayHover" onMouseExited="#mondayHoverExit" radius="30.0" stroke="BLACK" strokeWidth="0.0" />
+                <Label fx:id="labelSunday" layoutX="453.0" layoutY="50.0" onMouseClicked="#sundayClicked" onMouseEntered="#sundayHover" onMouseExited="#sundayHoverExit" text="Sun">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelSaturday" layoutX="395.0" layoutY="50.0" text="Sat">
+                <Label fx:id="labelSaturday" layoutX="395.0" layoutY="50.0" onMouseClicked="#saturdayClicked" onMouseEntered="#saturdayHover" onMouseExited="#saturdayHoverExit" text="Sat">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelFriday" layoutX="337.0" layoutY="50.0" text="Fri">
+                <Label fx:id="labelFriday" layoutX="337.0" layoutY="50.0" onMouseClicked="#fridayClicked" onMouseEntered="#fridayHover" onMouseExited="#fridayHoverExit" text="Fri">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelThursday" layoutX="273.0" layoutY="50.0" text="Thu">
+                <Label fx:id="labelThursday" layoutX="273.0" layoutY="50.0" onMouseClicked="#thursdayClicked" onMouseEntered="#thursdayHover" onMouseExited="#thursdayHoverExit" text="Thu">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelWednesday" layoutX="211.0" layoutY="50.0" text="Wed">
+                <Label fx:id="labelWednesday" layoutX="211.0" layoutY="50.0" onMouseClicked="#wednesdayClicked" onMouseEntered="#wednesdayHover" onMouseExited="#wednesdayHoverExit" text="Wed">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelTuesday" layoutX="154.0" layoutY="50.0" text="Tue">
+                <Label fx:id="labelTuesday" layoutX="154.0" layoutY="50.0" onMouseClicked="#tuesdayClicked" onMouseEntered="#tuesdayHover" onMouseExited="#tuesdayHoverExit" text="Tue">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelMonday" layoutX="91.0" layoutY="50.0" text="Mon">
+                <Label fx:id="labelMonday" layoutX="91.0" layoutY="50.0" onMouseClicked="#mondayClicked" onMouseEntered="#mondayHover" onMouseExited="#mondayHoverExit" text="Mon">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <Label fx:id="sundayDate" layoutX="452.0" layoutY="70.0" text="Date" />
-                <Label fx:id="saturdayDate" layoutX="392.0" layoutY="70.0" text="Date" />
-                <Label fx:id="fridayDate" layoutX="332.0" layoutY="70.0" text="Date" />
-                <Label fx:id="thursdayDate" layoutX="272.0" layoutY="70.0" text="Date" />
-                <Label fx:id="wednesdayDate" layoutX="213.0" layoutY="70.0" text="Date" />
-                <Label fx:id="tuesdayDate" layoutX="153.0" layoutY="70.0" text="Date" />
-                <Label fx:id="mondayDate" layoutX="93.0" layoutY="70.0" text="Date" />
+                <Label fx:id="sundayDate" layoutX="452.0" layoutY="70.0" onMouseClicked="#sundayClicked" onMouseEntered="#sundayHover" onMouseExited="#sundayHoverExit" text="Date" />
+                <Label fx:id="saturdayDate" layoutX="392.0" layoutY="70.0" onMouseClicked="#saturdayClicked" onMouseEntered="#saturdayHover" onMouseExited="#saturdayHoverExit" text="Date" />
+                <Label fx:id="fridayDate" layoutX="332.0" layoutY="70.0" onMouseClicked="#fridayClicked" onMouseEntered="#fridayHover" onMouseExited="#fridayHoverExit" text="Date" />
+                <Label fx:id="thursdayDate" layoutX="272.0" layoutY="70.0" onMouseClicked="#thursdayClicked" onMouseEntered="#thursdayHover" onMouseExited="#thursdayHoverExit" text="Date" />
+                <Label fx:id="wednesdayDate" layoutX="213.0" layoutY="70.0" onMouseClicked="#wednesdayClicked" onMouseEntered="#wednesdayHover" onMouseExited="#wednesdayHoverExit" text="Date" />
+                <Label fx:id="tuesdayDate" layoutX="153.0" layoutY="70.0" onMouseClicked="#tuesdayClicked" onMouseEntered="#tuesdayHover" onMouseExited="#tuesdayHoverExit" text="Date" />
+                <Label fx:id="mondayDate" layoutX="93.0" layoutY="70.0" onMouseClicked="#mondayClicked" onMouseEntered="#mondayHover" onMouseExited="#mondayHoverExit" text="Date" />
                 <Pane fx:id="dayDetailPane" layoutX="26.0" layoutY="113.0" prefHeight="334.0" prefWidth="516.0" style="-fx-background-color: #aeeaf0; -fx-background-radius: 10;">
                     <children>
                         <Label fx:id="time0700" layoutX="24.0" layoutY="50.0" text="07:00" />
@@ -156,7 +156,7 @@
                         <Label fx:id="time1600" layoutX="24.0" layoutY="248.0" text="16:00" />
                         <Label fx:id="time1700" layoutX="24.0" layoutY="270.0" text="17:00" />
                         <Label fx:id="time1800" layoutX="24.0" layoutY="292.0" text="18:00" />
-                        <Pane fx:id="timetablePane" layoutX="75.0" layoutY="49.0" onMouseClicked="#timetablePaneClicked" prefHeight="266.0" prefWidth="123.0" style="-fx-background-color: #eeeeee; -fx-opacity: 30%; -fx-border-color: black; -fx-border-style: dashed; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                        <Pane fx:id="timetablePane" layoutX="75.0" layoutY="49.0" onMouseClicked="#timetablePaneClicked" onMouseEntered="#timetablePaneHover" onMouseExited="#timetablePaneHoverExit" prefHeight="266.0" prefWidth="123.0" style="-fx-background-color: #eeeeee; -fx-opacity: 30%; -fx-border-color: black; -fx-border-style: dashed; -fx-background-radius: 10; -fx-border-radius: 10;" />
                         <Label fx:id="timetableLabel" layoutX="99.0" layoutY="21.0" text="Timetable">
                             <font>
                                 <Font name="Corbel" size="18.0" />
@@ -172,8 +172,8 @@
                                 <Font name="Corbel" size="18.0" />
                             </font>
                         </Label>
-                        <Pane fx:id="homeworkPane" layoutX="217.0" layoutY="49.0" onMouseClicked="#homeworkPaneClicked" prefHeight="266.0" prefWidth="123.0" style="-fx-background-color: #eeeeee; -fx-opacity: 30%; -fx-border-color: black; -fx-border-style: dashed; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                        <Pane fx:id="testPane" layoutX="365.0" layoutY="49.0" onMouseClicked="#testPaneClicked" prefHeight="266.0" prefWidth="123.0" style="-fx-background-color: #eeeeee; -fx-opacity: 30%; -fx-border-color: black; -fx-border-style: dashed; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                        <Pane fx:id="homeworkPane" layoutX="217.0" layoutY="49.0" onMouseClicked="#homeworkPaneClicked" onMouseEntered="#homeworkPaneHover" onMouseExited="#homeworkPaneHoverExit" prefHeight="266.0" prefWidth="123.0" style="-fx-background-color: #eeeeee; -fx-opacity: 30%; -fx-border-color: black; -fx-border-style: dashed; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                        <Pane fx:id="testPane" layoutX="365.0" layoutY="49.0" onMouseClicked="#testPaneClicked" onMouseEntered="#testPaneHover" onMouseExited="#testPaneHoverExit" prefHeight="266.0" prefWidth="123.0" style="-fx-background-color: #eeeeee; -fx-opacity: 30%; -fx-border-color: black; -fx-border-style: dashed; -fx-background-radius: 10; -fx-border-radius: 10;" />
                     </children>
                     <effect>
                         <DropShadow height="7.0" offsetX="5.0" offsetY="5.0" radius="3.0" width="7.0">
