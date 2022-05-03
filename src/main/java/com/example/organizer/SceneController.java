@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -40,6 +41,14 @@ public class SceneController {
     Pane homeworkPane;
     @FXML
     Pane testPane;
+    @FXML
+    Pane tbzMarkPanel;
+    @FXML
+    Button tbzSubject;
+    @FXML
+    Button tbzMark;
+    @FXML
+    Button tbzAverage;
 
 
     private Stage stage;
@@ -90,6 +99,7 @@ public class SceneController {
         changeTab(tuesdayCircle);
     }
 
+
     public void mondayClicked(MouseEvent mouseEvent) {
         changeTab(mondayCircle);
     }
@@ -122,13 +132,6 @@ public class SceneController {
 
     public void switchToTeacher(ActionEvent event) throws IOException {
         switchScene(event, "teacher-view");
-    }
-
-    public void createNewTbzSubject(MouseEvent mouseEvent){
-        TextArea textArea = new TextArea();
-        textArea.setText("hi");
-
-
     }
 
     public void sundayHover(MouseEvent mouseEvent) {
@@ -257,6 +260,24 @@ public class SceneController {
         currentCircle = circleClicked;
     }
 
+    private void addTBZSubject(Button buttonClicked){
+        //TextArea textArea = new TextArea();
+        //textArea.setLayoutX(22);
+        //textArea.setLayoutY(buttonClicked.getLayoutY());
+        //textArea.setPrefHeight(17);
+        //textArea.setMaxWidth(50);
+        //textArea.setMinWidth(25);
+        Label label = new Label();
+        label.setLayoutX(22);
+        label.setLayoutY(buttonClicked.getLayoutY());
+        label.setPrefHeight(17);
+        tbzMarkPanel.getChildren().add(label);
+        label.setVisible(true);
+        buttonClicked.setLayoutY(buttonClicked.getLayoutY() + 28);
+        //buttonClicked.setEffect(null);
+
+    }
+
     private boolean isCurrentCircleNull() {
         return currentCircle == null;
     }
@@ -266,4 +287,7 @@ public class SceneController {
     }
 
 
+    public void createNewTbzSubject(ActionEvent event) {
+        addTBZSubject(tbzSubject);
+    }
 }
