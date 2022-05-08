@@ -7,6 +7,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
@@ -66,6 +70,14 @@ public class SceneController {
     Pane dayDetailPane1;
     @FXML
     Pane AddTimeTablePane;
+    @FXML
+    Pane tbzMarkPanel;
+    @FXML
+    Button tbzSubject;
+    @FXML
+    Button tbzMark;
+    @FXML
+    Button tbzAverage;
 
 
     private Stage stage;
@@ -115,6 +127,7 @@ public class SceneController {
     public void tuesdayClicked(MouseEvent mouseEvent) {
         changeTab(tuesdayCircle);
     }
+
 
     public void mondayClicked(MouseEvent mouseEvent) {
         changeTab(mondayCircle);
@@ -319,6 +332,24 @@ public class SceneController {
     }
 
 
+    private void addTBZSubject(Button buttonClicked){
+        //TextArea textArea = new TextArea();
+        //textArea.setLayoutX(22);
+        //textArea.setLayoutY(buttonClicked.getLayoutY());
+        //textArea.setPrefHeight(17);
+        //textArea.setMaxWidth(50);
+        //textArea.setMinWidth(25);
+        Label label = new Label();
+        label.setLayoutX(22);
+        label.setLayoutY(buttonClicked.getLayoutY());
+        label.setPrefHeight(17);
+        tbzMarkPanel.getChildren().add(label);
+        label.setVisible(true);
+        buttonClicked.setLayoutY(buttonClicked.getLayoutY() + 28);
+        //buttonClicked.setEffect(null);
+
+    }
+
     private boolean isCurrentCircleNull() {
         return currentCircle == null;
     }
@@ -328,4 +359,7 @@ public class SceneController {
     }
 
 
+    public void createNewTbzSubject(ActionEvent event) {
+        addTBZSubject(tbzSubject);
+    }
 }
