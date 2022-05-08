@@ -6,18 +6,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Statement;
 
 public class SceneController {
 
+    public Button calendarButton;
     @FXML
     Circle mondayCircle;
     @FXML
@@ -40,6 +40,32 @@ public class SceneController {
     Pane homeworkPane;
     @FXML
     Pane testPane;
+    @FXML
+    Label timetableLabel;
+    @FXML
+    Label homeworkLabel;
+    @FXML
+    Label testsLabel;
+    @FXML
+    Label AddTimeTableTitle;
+    @FXML
+    TextField AddTimeTableNameInput;
+    @FXML
+    ChoiceBox AddTimeTableDayDropdown;
+    @FXML
+    TextField AddTimeTableStartTimeInput;
+    @FXML
+    TextField AddTimeTableEndTimeInput;
+    @FXML
+    ChoiceBox AddTimeTableReoccurenceDropdown;
+    @FXML
+    Button AddTimeTableCancelButton;
+    @FXML
+    Button AddTimeTableDoneButton;
+    @FXML
+    Pane dayDetailPane1;
+    @FXML
+    Pane AddTimeTablePane;
 
 
     private Stage stage;
@@ -51,7 +77,7 @@ public class SceneController {
     public void homePaneClicked(MouseEvent mouseEvent) {
     }
 
-    public void calendarButtonClicked(ActionEvent actionEvent) throws IOException{
+    public void calendarButtonClicked(ActionEvent actionEvent) throws IOException {
         switchToCalendar(actionEvent);
     }
 
@@ -95,6 +121,7 @@ public class SceneController {
     }
 
     public void timetablePaneClicked(MouseEvent mouseEvent) {
+        AddTimeTablePane.setVisible(true);
     }
 
     public void homeworkPaneClicked(MouseEvent mouseEvent) {
@@ -124,7 +151,7 @@ public class SceneController {
         switchScene(event, "teacher-view");
     }
 
-    public void createNewTbzSubject(MouseEvent mouseEvent){
+    public void createNewTbzSubject(MouseEvent mouseEvent) {
         TextArea textArea = new TextArea();
         textArea.setText("hi");
 
@@ -173,6 +200,7 @@ public class SceneController {
 
     public void tuesdayHover(MouseEvent mouseEvent) {
         changeCircleColorOnHover(tuesdayCircle, true);
+
     }
 
     public void tuesdayHoverExit(MouseEvent mouseEvent) {
@@ -209,6 +237,39 @@ public class SceneController {
 
     public void testPaneHover(MouseEvent mouseEvent) {
         changePaneColorOnHover(testPane, true);
+    }
+
+    public void AddTimeTableDoneButtonHoverEnter(MouseEvent mouseDragEvent) {
+    }
+
+    public void AddTimeTableDoneButtonHoverExit(MouseEvent mouseDragEvent) {
+    }
+
+    public void AddTimeTableCancelButtonHoverEnter(MouseEvent mouseDragEvent) {
+    }
+
+    public void AddTimeTableCancelButtonHoverExit(MouseEvent mouseDragEvent) {
+    }
+
+    public void MarksButtonClicked(ActionEvent event) {
+    }
+
+    public void AddTimeTableCancelButtonClicked(ActionEvent event) {
+        AddTimeTablePane.setVisible(false);
+        dayDetailPane1.setVisible(true);
+    }
+
+    public void AddTimeTableClicked(MouseEvent mouseEvent) {
+        AddTimeTablePane.setVisible(true);
+        dayDetailPane1.setVisible(false);
+        String query = "GET * FROM SCHÜLER WHERE Vorname = 'Kevin'";
+        System.out.println(query);
+
+    }
+
+    public void AddTimeTableDoneButtonClicked(ActionEvent event) {
+        AddTimeTablePane.setVisible(false);
+        dayDetailPane1.setVisible(true);
     }
 
     private void switchScene(ActionEvent event, String fileName) throws IOException {
@@ -256,6 +317,7 @@ public class SceneController {
         currentCircle.setEffect(Const.CIRCLESHADOW);
         currentCircle = circleClicked;
     }
+
 
     private boolean isCurrentCircleNull() {
         return currentCircle == null;
